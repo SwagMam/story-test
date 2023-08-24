@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addstories.AddStoriesActivity">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="32dp">
+        
+        <ImageView
+            android:id="@+id/imgStoryAdd"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="1dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/addStory" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCameraAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/blue_grey_secondary"
+            android:text="@string/camera"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/imgStoryAdd"
+            app:layout_constraintStart_toStartOf="@+id/imgStoryAdd"
+            app:layout_constraintEnd_toStartOf="@+id/btnGaleryAdd"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGaleryAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/blue_grey_secondary"
+            android:text="@string/galery"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/imgStoryAdd"
+            app:layout_constraintTop_toBottomOf="@id/imgStoryAdd"
+            app:layout_constraintStart_toEndOf="@+id/btnCameraAdd"/>
+        
+        <EditText
+            android:id="@+id/edtDesciptionAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="top"
+            android:hint="@string/description"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:maxLines="3"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="@id/imgStoryAdd"
+            app:layout_constraintStart_toStartOf="@id/imgStoryAdd"
+            app:layout_constraintTop_toBottomOf="@+id/btnCameraAdd"/>
+
+        <TextView
+            android:id="@+id/tvCurrentLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/edtDesciptionAdd"
+            app:layout_constraintStart_toStartOf="@id/imgStoryAdd"
+            app:layout_constraintEnd_toEndOf="@id/imgStoryAdd"
+            android:text="@string/current_location"
+            app:drawableStartCompat="@drawable/ic_location"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvCurrentLocation"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:text="@string/share_location"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/imgStoryAdd"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/edtDesciptionAdd" />-->
+
+<!--        <com.google.android.material.switchmaterial.SwitchMaterial-->
+<!--            android:id="@+id/switch_location"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/tvCurrentLocation"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/imgStoryAdd"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/tvCurrentLocation" />-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUpload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/upload"
+            app:layout_constraintStart_toStartOf="@id/imgStoryAdd"
+            app:layout_constraintEnd_toEndOf="@id/imgStoryAdd"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentLocation"
+            android:background="@color/blue_grey_light"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUploadAsGuest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/upload_as_guest"
+            app:layout_constraintStart_toStartOf="@id/imgStoryAdd"
+            app:layout_constraintEnd_toEndOf="@id/imgStoryAdd"
+            app:layout_constraintTop_toBottomOf="@id/btnUpload"
+            android:background="@color/blue_grey_light"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <ProgressBar
+            android:id="@+id/isLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/imgStoryAdd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
